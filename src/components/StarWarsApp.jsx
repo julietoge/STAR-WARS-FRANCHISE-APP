@@ -39,7 +39,7 @@ const StarWarsApp = () => {
 
       <div>
         {data &&
-          data.map((episode) => {
+          (data.map((episode) => {
             return (
               <div key={episode.episode_id}>
                 <p>{episode.title}</p>
@@ -50,7 +50,7 @@ const StarWarsApp = () => {
                 </a>
               </div>
             );
-          })}
+          }))}
       </div>
       </div>
   )
