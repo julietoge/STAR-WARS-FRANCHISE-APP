@@ -1,8 +1,66 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    text-align: center;
+body {
+  text-align: center;
+  background-color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+}
+header {
+  max-width: 100%;
+}
+header svg {
+  width: 40%;
+  padding: 16px 0;
+}
+section {
+  max-width: 100%;
+}
+section .StarWarContent {
+  width: 80%;
+  margin: 10px auto 0;
+}
+section .StarWarContent .loadingText {
+  font-size: 35px;
+}
+section .StarWarContent svg {
+  width: 30%;
+  margin-top: 0;
+}
+section .StarWarContent .dataContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+section .StarWarContent .dataItems {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin: 4px;
+  padding: 2rem;
+}
+section .StarWarContent .dataItems p{
+    margin: 6px 0;
+}
+section .StarWarContent .dataItems a{
+    color: yellow;
+    font-size: 16px;
+    text-decoration: none;
+}
+section .StarWarContent .dataItems:hover {
+  box-shadow: transparent 0px 0px 10px 3px, rgb(0, 0, 0) 0px 0px 10px;
+  transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 989px) {
+  section .StarWarContent .dataContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 589px) {
+  section .StarWarContent .dataContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

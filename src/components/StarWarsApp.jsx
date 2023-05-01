@@ -30,9 +30,10 @@ const StarWarsApp = () => {
   }, []);
 
   return (
-    <div>
+    <section>
+      <div className="StarWarContent">
       {loading &&  <div>
-        <div>Please wait, Loading... </div>
+        <div className="loadingText">Please wait, Loading... </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 612 612"
@@ -51,12 +52,12 @@ const StarWarsApp = () => {
         <div>{`Error Occur while Fetching the Post Data - ${error}`}</div>
       )}
 
-      <div>
+      <div className="dataContent">
         {data &&
           data.map((episode) => (
-              <div key={episode.episode_id}>
+              <div className="dataItems" key={episode.episode_id}>
                 <p>{episode.title}</p>
-                <p>{episode.release_date}</p>
+                <p>{new Date(episode.release_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                 <p>{episode.opening_crawl}</p>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
                   More info
@@ -66,6 +67,7 @@ const StarWarsApp = () => {
           )}
       </div>
       </div>
+      </section>
   )
         }
 
